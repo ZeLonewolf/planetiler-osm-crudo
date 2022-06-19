@@ -52,6 +52,7 @@ public class CrudoProfile implements Profile {
         .map(jsonObj -> jsonObj.get("other_key"))
         .map(Object::toString)
         .collect(Collectors.toCollection(HashSet::new));
+      allowableKeys.add(layer);
       layerKeyMap.put(layer, allowableKeys);
     } catch (JSONException | IOException e) {
       e.printStackTrace();
